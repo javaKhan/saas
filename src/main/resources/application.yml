@@ -1,0 +1,38 @@
+server:
+  port: 4444
+spring:
+  datasource:
+    tenantId: Master
+    url: jdbc:mysql://127.0.0.1:3306/sass_conf?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: imkzp.com
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL57Dialect
+    show-sql: true
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  mvc:
+    favicon:
+      enabled: false
+##################################################################
+# MULTITENANCY MASTER DATABASE SETUP
+##################################################################
+multitenancy:
+  mmtap:
+    master:
+      datasource:
+        url: jdbc:mysql://localhost:3306/sass_conf?useSSL=false
+        username: root
+        password: imkzp.com
+        driverClassName: com.mysql.cj.jdbc.Driver
+        connectionTimeout: 20000
+        maxPoolSize: 10
+        idleTimeout: 300000
+        minIdle: 10
+        poolName: masterdb-connection-pool
+#logging:
+#  level:
+#    ROOT: debug
