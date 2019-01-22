@@ -1,4 +1,4 @@
-package com.mmtap.cma.demo.config.security;
+package com.mmtap.cma.demo.saas.config;
 
 import com.mmtap.cma.demo.saas.tenant.TenantInterceptor;
 import lombok.extern.slf4j.Slf4j;
