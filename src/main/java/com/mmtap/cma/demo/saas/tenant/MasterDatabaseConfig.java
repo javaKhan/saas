@@ -67,12 +67,10 @@ public class MasterDatabaseConfig {
         return transactionManager;
     }
 
-
     @Bean
     public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
         return new PersistenceExceptionTranslationPostProcessor();
     }
-
 
     private Properties hibernateProperties() {
         Properties properties = new Properties();
